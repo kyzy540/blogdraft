@@ -1,6 +1,10 @@
 ---
 title: "致志在全成就的老哥"
 date: 2022-01-10T14:14:22+08:00
+keywords:
+  - super mario
+  - odyssey
+  - guide
 ---
 
 老哥，
