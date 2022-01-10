@@ -4,8 +4,8 @@ title: "低质量随笔"
 theme: "hugo-PaperMod"
 
 markup:
-    markup.goldmark:
-        markup.goldmark.renderer:
+    goldmark:
+        renderer:
             unsafe: true
 
 params:
