@@ -1,6 +1,8 @@
 ---
 title: "《Horizon 4》和《GT Sports》"
 date: 2022-01-13T16:47:32+08:00
+tags:
+  - 游戏
 keywords:
   - GT
   - forza

@@ -8,7 +8,12 @@ markup:
         renderer:
             unsafe: true
 
+menu:
+    main:
+        - name: tags
+          url: tags/
+
 params:
     homeInfoParams:
         Title: "低质量随笔"
-        Content: "主观，不负责，图一乐"
+        Content: "主观，不负责，图一乐 [💬](/post/githubpage_blog_guide)"

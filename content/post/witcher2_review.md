@@ -1,6 +1,9 @@
 ---
 title: "巫师系列第二章"
 date: 2018-07-11T16:03:06+08:00
+tags:
+  - 游戏
+  - 巫师
 keywords:
   - 巫师
   - witcher

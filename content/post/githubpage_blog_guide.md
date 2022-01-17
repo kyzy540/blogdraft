@@ -19,6 +19,6 @@ keywords:
 
 其实就抄了一篇作业: [Create a Free Blog Site Using GitHub Pages and Hugo](https://youngkin.github.io/post/createafreeblogsite) 。主题风格选了 [PaperMod](https://themes.gohugo.io/themes/hugo-papermod/) 。没啥原创性
 
-我没加给博客加评论功能。方法[上面引用的文章里有提](https://youngkin.github.io/post/createafreeblogsite/#add-support-for-comments)，也有其他 [指导](https://retifrav.github.io/blog/2019/04/19/github-comments-hugo/) 可以参考。但我经过一番琢磨还是放弃。一则我懒，二则我穷，三则怕被喷 (写这么烂不被喷才怪)。没评论的互联网多清净
+我没加给博客加评论功能。方法[上面引用的文章里有提](https://youngkin.github.io/post/createafreeblogsite/#add-support-for-comments)，也有其他 [指导](https://retifrav.github.io/blog/2019/04/19/github-comments-hugo/) 可以参考，[Isso](https://posativ.org/isso/)和[twikoo](https://twikoo.js.org/)看起来也是不错的选择。但我经过一番琢磨还是放弃。一则我懒，二则我穷，三则怕被喷 (写这么烂不被喷才怪)。没评论的互联网多清净
 
 就写这么多吧，要么咋显得质量低呢？

@@ -1,6 +1,9 @@
 ---
 title: "巫师系列第一章"
 date: 2018-06-27T17:13:23+08:00
+tags:
+  - 游戏
+  - 巫师
 keywords:
   - 巫师
   - witcher

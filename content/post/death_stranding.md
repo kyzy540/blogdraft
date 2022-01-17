@@ -2,6 +2,8 @@
 title: "《死亡搁浅: 导演剪辑版》心得"
 date: 2021-12-28T20:40:49+08:00
 description: "我的2021年度游戏"
+tags:
+  - 游戏
 keywords:
   - 死亡搁浅
   - death stranding

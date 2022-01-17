@@ -1,6 +1,8 @@
 ---
 title: "《马里奥: 奥德赛》心得"
 date: 2019-02-18T15:42:01+08:00
+tags:
+  - 游戏
 keywords:
   - super mario
   - odyssey

@@ -1,6 +1,9 @@
 ---
 title: "夸夸《巫师1》的剧情"
 date: 2020-07-18T19:05:59+08:00
+tags:
+  - 游戏
+  - 巫师
 keywords:
   - the witcher
   - 巫师
