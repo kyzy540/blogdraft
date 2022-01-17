@@ -1,15 +1,13 @@
 ---
-title: "《马里奥: 奥德赛》心得"
+title: "《马里奥: 奥德赛》——致志在全成就的老哥"
 date: 2019-02-18T15:42:01+08:00
 tags:
   - 游戏
 keywords:
-  - super mario
+  - mario
   - odyssey
   - guide
 ---
-
-# 致志在全成就的老哥
 
 老哥，
 
