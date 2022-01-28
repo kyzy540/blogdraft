@@ -8,7 +8,7 @@ keywords:
 ---
 
 ## 《爱情神话》 ⭐️⭐️⭐️⭐️⭐️
-![](https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2772925591.webp)
+![](/img/movies/b_for_busy.webp)
 
 [豆瓣链接](https://movie.douban.com/subject/35376457)
 
