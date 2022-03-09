@@ -7,7 +7,7 @@ keywords:
   - 扬名立万
 ---
 
-## 《扬名立万》 ⭐️⭐️⭐️⭐️⭐️
+⭐️⭐️⭐️⭐️⭐️
 ![](/img/movies/be_somebody.webp)
 
 [豆瓣链接](https://movie.douban.com/subject/35422807)

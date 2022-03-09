@@ -7,7 +7,7 @@ keywords:
   - 爱情神话
 ---
 
-## 《爱情神话》 ⭐️⭐️⭐️⭐️⭐️
+⭐️⭐️⭐️⭐️⭐️
 ![](/img/movies/b_for_busy.webp)
 
 [豆瓣链接](https://movie.douban.com/subject/35376457)
