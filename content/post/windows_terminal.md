@@ -3,6 +3,7 @@ title: "微软好终端"
 date: 2020-06-18T19:05:59+08:00
 tags:
   - 微软
+  - it
 keywords:
   - windows
   - terminal
