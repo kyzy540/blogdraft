@@ -33,5 +33,8 @@ http-server storage/dcim/Camera
 可以看到服务启动，监听`http://30.43.99.138:8080`
 ![](/img/android_httpserver/android_httpserver.png)
 
-同局域网内的其他设备就可以直接访问这个地址浏览文件了
+同局域网内的其他设备就可以直接访问这个地址浏览文件了。找到想看的mp4，点开直接播放
 ![](/img/android_httpserver/android_httpserver1.png)
+
+### 题外话: 为啥不用python http.server?
+python http.server (或者SimpleHTTPServer)没法以串流形式播放mp4，还是得把整个文件下载到本地才能播。串流播放是需要服务端支持的，关键在于既要读取请求headers里的range，并以http code 206返回视频文件的切分段。浏览器只有得到http code 206才会以串流形式处理视频。另外浏览器要支持HTML5，老版本没有这个特性
