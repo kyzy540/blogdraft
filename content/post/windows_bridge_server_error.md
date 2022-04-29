@@ -1,5 +1,5 @@
 ---
-title: "Windows_bridge_server_error"
+title: "ERROR: Win32Bridge.Server.exe"
 date: 2022-04-28T09:43:39+08:00
 tags:
   - 微软
