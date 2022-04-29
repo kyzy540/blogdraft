@@ -86,7 +86,7 @@ WSL全称Windows Subsystem for Linux，介绍请戳[官方文档](https://docs.m
 
 完整的Linux终端下，能玩的花活不计其数。这里只提几点心得
 
-![img](/img/windows_terminal/p73572541.jpg)
+![img](/img/windows/p73572541.jpg)
 
 Properties->Options 可以开启复制/粘体快捷键。如果看不到如图选项，说明系统版本过低，请升级。系统版本可以用winver命令查看
 
@@ -109,7 +109,7 @@ for i in $(grep -l Log *.java); do subl $i; done
 
 ## Windows Terminal
 
-![img](/img/windows_terminal/p73572542.jpg)
+![img](/img/windows/p73572542.jpg)
 
 [Windows Terminal](https://en.wikipedia.org/wiki/Windows_Terminal) 是我用过最好的终端工具之一。支持pane、tab、高度可定制等，优点不一而足。[官方文档](https://docs.microsoft.com/zh-cn/windows/terminal/)也非常详实
 
