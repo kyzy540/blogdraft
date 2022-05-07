@@ -29,15 +29,15 @@ keywords:
 
 ## 护甲推荐
 
-武器不推荐了，选择比较少，买等级高的就行。推荐2套甲吧，标准很简单，近战/远程防御力高，技能也都用的上
-
-素歌之城买，便宜耐用，形象好看。能撑到25级左右，也就是收集完3个盖亚组建
+武器能说的不多，最后一关带等离子加特林，其他时候选择少，买等级高的就行。推荐2套甲吧，标准是 近战/远程防御力高，技能也都用的上。这游戏没固定打法，敌人属性千奇百怪，搞针对太繁琐。堆物理防御力是万金油策略，毕竟所有敌人都会物理攻击
 
 ![](https://images.pushsquare.com/ba04aec83856f/horizon-forbidden-west-outfits-armour-guide-ps5-ps4-carja-shadow.large.jpg)
 
-收集完3个盖亚组建后在基地左边的商人处买。数值优秀，升级素材相对好找
+**Carja Shadow**: 素歌之城买，便宜耐用，形象好看。能撑到25级左右，也就是收集完3个盖亚组件
 
 ![](https://images.pushsquare.com/416c11c9f9846/horizon-forbidden-west-outfits-armour-guide-ps5-ps4-nora-valiant.large.jpg)
+
+**Nora Valiant**: 收集完3个盖亚组建后在基地左边的商人处买。数值优秀，升级素材相对好找
 
 参考:
 https://www.pushsquare.com/guides/horizon-forbidden-west-all-outfits-armor-and-best-outfits-to-use
