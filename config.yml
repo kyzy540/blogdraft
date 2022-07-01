@@ -14,6 +14,4 @@ menu:
           url: tags/
 
 params:
-    homeInfoParams:
-        Title: "低质量随笔"
-        Content: "主观，不负责，图一乐 [💬](/post/githubpage_blog_guide)"
+    disableSpecial1stPost: true
