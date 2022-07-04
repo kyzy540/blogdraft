@@ -14,4 +14,5 @@ menu:
           url: tags/
 
 params:
-    disableSpecial1stPost: true
+    homeInfoParams:
+        Content: "主观，不负责，图一乐 [💬](/post/githubpage_blog_guide)"
