@@ -32,11 +32,11 @@ os选ubuntu。不选centos是因其没带 `wget` ，懒得装。防火墙放行 
 文章写得很好，我仅补充一点: 文中的安装脚本 (goV2.sh) 在2022年11月7日报错。我仅针对报错修改了一下脚本，可自取
 
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/kyzy540/blogdraft/main/static/scripts/goV2.sh)
+bash <(curl -sL https://raw.githubusercontent.com/kyzy540/blogdraft/main/static/scripts/goV2.sh --version v5.1.0)
 ```
 
 改动点如下
-* 删除`v2ctl` 相关代码，`v2ctl` 在v2ray 1.5.0中被移除
+* 删除`v2ctl` 相关代码，`v2ctl` 在v2ray v5.1.0 中被移除
 * 修改`v2ray.service`启动命令，增加了`run`子命令和 `v2ray.vmess.aead.forced=false` 环境变量
 
 ### 诊断V2Ray代理
