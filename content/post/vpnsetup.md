@@ -63,9 +63,23 @@ bash <(curl -sL https://raw.githubusercontent.com/kyzy540/blogdraft/main/static/
 
 在启动命令加入环境变量后问题解决
 
-## Trojan
+### Xray (未实践)
 
-trojan协议和上文教程中提到的 [V2Ray高级技巧：流量伪装](https://itlanyan.com/v2ray-traffic-mask/) 类似。稳定性更高，但成本也高。用户需额外购买域名，并为之签发HTTPS证书。又因国内域名要求备案，购买国外域名基本是唯一出路，因而还涉及支付问题，就不展开讨论。仅列两篇部署教程，供参考
+[Xray教程](https://itlanyan.com/xray-tutorial/) 是V2Ray进阶篇，搭建更复杂，稳定性也更高。其中有一步骤制作TLS证书，可以按文中所述购买域名，也可以用自签名证书，但无论如何都有点麻烦。我的V2Ray还算稳定，所以这里仅做记录，以备日后不时之需
+
+我不推荐购买域名。因国内域名要求备案，购买国外域名基本是唯一出路，支付不便。另外 [Let's Encrypt](https://letsencrypt.org/)签发的证书只有3个月有效期，必须定期续期，有额外管理成本
+
+自签名证书有技术门槛，但一次投入，长期收益，因此是个更合理的选择。参考文档:
+
+[局域网内搭建浏览器可信任的SSL证书](https://www.tangyuecan.com/2021/12/17/%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E6%90%AD%E5%BB%BA%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84ssl%E8%AF%81%E4%B9%A6/)
+
+[如何创建自签名SSL证书支持私有域名的HTTPS服务](https://blog.heylinux.com/2021/11/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E7%AD%BE%E5%90%8Dssl%E8%AF%81%E4%B9%A6%E6%94%AF%E6%8C%81%E7%A7%81%E6%9C%89%E5%9F%9F%E5%90%8D%E7%9A%84https%E6%9C%8D%E5%8A%A1/)
+
+[Certbot DNS problem - not using /etc/hosts](https://stackoverflow.com/questions/69566131/certbot-dns-problem-not-using-etc-hosts)
+
+## Trojan (未实践)
+
+Trojan 和 Xray 类似，带伪装和加密，也需要TLS证书。但 [trojan-go](https://github.com/p4gefau1t/trojan-go) 代码库已经1年多没更新，最新版停留在 v0.10.6。相比 Xray 项目显得缺少活力。这里仅记两篇部署教程，供参考
 
 [Install Trojan-GFW Server on Ubuntu Linux](https://sedap.github.io/install-trojan-gfw-on-ubuntu.html)
 
