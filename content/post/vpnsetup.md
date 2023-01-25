@@ -32,12 +32,27 @@ os选ubuntu。不选centos是因其没带 `wget` ，懒得装。防火墙放行 
 文章写得很好，我仅补充一点: 文中的安装脚本 (goV2.sh) 在2022年11月7日报错。我仅针对报错修改了一下脚本，可自取
 
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/kyzy540/blogdraft/main/static/scripts/goV2.sh --version v5.1.0)
+wget https://raw.githubusercontent.com/kyzy540/blogdraft/main/static/scripts/goV2.sh
+chmod +x goV2.sh
+sudo ./goV2.sh --version v5.1.0
 ```
 
 改动点如下
 * 删除`v2ctl` 相关代码，`v2ctl` 在v2ray v5.1.0 中被移除
 * 修改`v2ray.service`启动命令，增加了`run`子命令和 `v2ray.vmess.aead.forced=false` 环境变量
+
+该脚本集成了配置文件生成，位置在`/etc/v2ray/config.json`。其中的uuid和端口均自动生成。安装完成后参考配置放行端口，启用服务
+
+```bash
+# ubuntu 20.02
+port=$(grep port /etc/v2ray/config.json | awk '{print $2}' | cut -d, -f1)
+ufw allow ${port}/tcp
+#启用 v2ray服务
+systemctl enable v2ray
+systemctl start v2ray
+```
+
+注意云实例的防火墙也要放行配置中的端口(TCP协议)
 
 ### 诊断V2Ray代理
 
