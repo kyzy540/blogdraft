@@ -59,6 +59,8 @@ SwitchyOmega构建会失败，其依赖的一个第三方库下架并停止维�
 
 先从Chrome应用商店安装发布版SwitchyOmega，从中提取 `angular-spectrum-colorpicker.min.js`，保存到 `omega-web/lib/angular-spectrum-colorpicker/angular-spectrum-colorpicker.min.js`
 
+![](/img/extend_switchyomega/angular-spectrum-colorpicker.png)
+
 修改 `https://github.com/FelisCatus/SwitchyOmega/blob/master/omega-web/bower.json`，把其中 `angular-spectrum-colorpicker`相关的2个健值对删除
 
 这样构建过程就能跳过被废弃的依赖库，扩展直接使用代码库中的 `angular-spectrum-colorpicker.min.js`
