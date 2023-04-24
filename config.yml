@@ -6,29 +6,30 @@ theme: "hugo-PaperMod"
 enableInlineShortcodes: true
 
 markup:
-    goldmark:
-        renderer:
-            unsafe: true
+  goldmark:
+    renderer:
+      unsafe: true
 
 menu:
-    main:
-        - name: Tags
-          url: tags/
-          weight: 1
-        - name: Archive
-          url: archives/
-          weight: 2
-        - name: Search
-          url: search/
-          weight: 3
+  main:
+    - name: Tags
+      url: tags/
+      weight: 1
+    - name: Archive
+      url: archives/
+      weight: 2
+    - name: Search
+      url: search/
+      weight: 3
 
 params:
-    ShowCodeCopyButtons: true
-    homeInfoParams:
-        Content: "主观，不负责，图一乐 [💬](/post/githubpage_blog_guide)"
+  env: production
+  ShowCodeCopyButtons: true
+  homeInfoParams:
+    Content: "主观，不负责，图一乐 [💬](/post/githubpage_blog_guide)"
 
 outputs:
-    home:
-        - HTML
-        - RSS
-        - JSON
+  home:
+    - HTML
+    - RSS
+    - JSON
