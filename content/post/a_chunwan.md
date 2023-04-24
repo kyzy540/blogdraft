@@ -5,10 +5,9 @@ tags:
   - 电影
 ---
 
-⭐️⭐️⭐️⭐️⭐️
-![一场很（没）有必要的春晚](/img/movies/a_chunwan.webp)
+[![](/img/movies/a_chunwan.webp#center)](https://movie.douban.com/subject/35765172/)
 
-[豆瓣链接](https://movie.douban.com/subject/35765172/)
+---
 
 有些电影，会让我质疑评分系统: 5星完全不够，它值100星！《一场很（没）有必要的春晚》对我来说就是这样一部作品
 

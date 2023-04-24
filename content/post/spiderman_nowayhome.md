@@ -8,10 +8,9 @@ keywords:
   - spiderman
 ---
 
-⭐️⭐️⭐️⭐️⭐️
-![](/img/movies/spiderman_nowayhome.webp)
+[![](/img/movies/spiderman_nowayhome.webp#center)](https://movie.douban.com/subject/26933210)
 
-[豆瓣链接](https://movie.douban.com/subject/26933210) <font color=red>建议别点，有剧透</font>
+----
 
 这是部好电影，我非常喜欢。复联4后我看漫威作品变得很谨慎。复联4作为一段长篇故事的结尾堪称完美，我希望将美好记忆定格在那一刻。所以当我决定看《蜘蛛侠3》的时候，我是抱有期望的。再加上看之前被剧透了一点关键桥段，结果看完后影片居然还是超出我预期，着实了不起。按理说超级英雄电影是弱剧情的，至少很经得住剧透，但《蜘蛛侠3》不同。我衷心希望没看过电影的朋友能在不做任何功课的前提下进入影院，享受它
 

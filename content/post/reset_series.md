@@ -8,10 +8,9 @@ keywords:
   - 开端
 ---
 
-⭐️⭐️⭐️⭐️⭐️
-![](/img/movies/reset_series.webp)
+[![](/img/movies/reset_series.webp#center)](https://movie.douban.com/subject/35332289/)
 
-[豆瓣链接](https://movie.douban.com/subject/35332289/)
+---
 
 好久没看这么令人开心的剧集。整部剧格局不大，场景不多，动作戏明显让人感到经费有限。但确是难得的佳作。全部演员演技在线，故事情节张弛有度，而且 **严谨**！严谨二字值千金
 

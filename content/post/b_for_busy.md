@@ -7,9 +7,8 @@ keywords:
   - 爱情神话
 ---
 
-⭐️⭐️⭐️⭐️⭐️
-![](/img/movies/b_for_busy.webp)
+[![](/img/movies/b_for_busy.webp#center)](https://movie.douban.com/subject/35376457)
 
-[豆瓣链接](https://movie.douban.com/subject/35376457)
+---
 
 2021年度微信广告（玩笑话）。我的2021年度电影（虽然2022才看）。在2021年末上映特别合适，细节时髦，内核经典。通篇上海话对白，从头笑到尾。有冯小刚早年贺岁片的味儿。我不记得上次看到这么让人开心的电影是啥时候了

@@ -8,10 +8,9 @@ keywords:
   - arcane
 ---
 
-⭐️⭐️⭐️⭐️⭐️
-![](/img/movies/arcane.webp)
+[![](/img/movies/arcane.webp#center)](https://movie.douban.com/subject/34867871/)
 
-[豆瓣链接](https://movie.douban.com/subject/34867871/)
+---
 
 我的2021年度剧集
 

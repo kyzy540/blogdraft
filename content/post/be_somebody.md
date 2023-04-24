@@ -7,10 +7,9 @@ keywords:
   - 扬名立万
 ---
 
-⭐️⭐️⭐️⭐️⭐️
-![](/img/movies/be_somebody.webp)
+[![](/img/movies/be_somebody.webp#center)](https://movie.douban.com/subject/35422807)
 
-[豆瓣链接](https://movie.douban.com/subject/35422807)
+---
 
 2022年看的第一部电影。好，不错，而且是国产片近年少有的类型。戏谑开场，严肃收尾，立意高但不做作。故事想讨论的主题挺沉重的，能以轻松的基调拍出来很不简单。影片开头说好不谈的内容后头其实都谈到了，回想起来很值得玩味
 

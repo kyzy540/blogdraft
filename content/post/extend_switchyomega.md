@@ -71,7 +71,7 @@ SwitchyOmega代码 76.7% 是 CoffeeScript，用到了AngularJS框架。依赖 No
 
 先从Chrome应用商店安装发布版SwitchyOmega，从中提取 `angular-spectrum-colorpicker.min.js`，保存到 `omega-web/lib/angular-spectrum-colorpicker/angular-spectrum-colorpicker.min.js`
 
-![](/img/extend_switchyomega/angular-spectrum-colorpicker.png)
+![](/img/extend_switchyomega/angular-spectrum-colorpicker.png#center)
 
 修改 `https://github.com/FelisCatus/SwitchyOmega/blob/master/omega-web/bower.json`，把其中 `angular-spectrum-colorpicker`相关的2个健值对删除
 
