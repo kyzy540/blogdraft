@@ -3,6 +3,8 @@ languageCode: "en-us"
 title: "低质量随笔"
 theme: "hugo-PaperMod"
 
+enableInlineShortcodes: true
+
 markup:
     goldmark:
         renderer:
@@ -10,9 +12,23 @@ markup:
 
 menu:
     main:
-        - name: tags
+        - name: Tags
           url: tags/
+          weight: 1
+        - name: Archive
+          url: archives/
+          weight: 2
+        - name: Search
+          url: search/
+          weight: 3
 
 params:
+    ShowCodeCopyButtons: true
     homeInfoParams:
         Content: "主观，不负责，图一乐 [💬](/post/githubpage_blog_guide)"
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
