@@ -7,7 +7,7 @@ tags:
 
 最近有俩东西伤了我的心。一是小米吸尘器，负心汉长这样
 
-![](/img/vacuum_cleaner/mi_vacuum_cleaner.webp)
+![](/img/vacuum_cleaner/mi_vacuum_cleaner.webp#center)
 
 你看他，眉清目秀，清新脱俗，我是一见倾心。但碍于他200多块钱的身价，一时间没舍得下手。这种只看不买的“单相思”状态持续了数月之久，终于在2021年12月我心一横，接着上头的血压，一拍大腿将他抱回了家
 
@@ -15,7 +15,7 @@ tags:
 
 事实证明，冲动是魔鬼。买之前我在淘宝上就看人有提到这问题，但当年选择视而不见
 
-![](/img/vacuum_cleaner/mi_comment.jpeg)
+![](/img/vacuum_cleaner/mi_comment.jpeg#center)
 
 顺带提一下，此图截于2023年2月，我看到的电池故障评论是两年前的另一条。因此算上我自个儿至少地球上有3个人着了小米的道儿
 
@@ -41,7 +41,7 @@ tags:
 
 第二位伤我心的是泰勒-斯威夫特，和网易云音乐
 
-![](/img/vacuum_cleaner/taylor_swift.jpeg)
+![](/img/vacuum_cleaner/taylor_swift.jpeg#center)
 
 
 你看她……我就是不想看她……打开app看泰勒5秒，app从后台切前台看泰勒5秒，解锁屏幕看泰勒5秒。I Need To Calm Down
@@ -49,7 +49,7 @@ tags:
 买黑胶会员就是冲着免广告。截止到去年，会员权益里写一直都写着会员可以免广告。但今年2月，突然间，云音乐拿泰勒糊满了我的手机屏幕。起初我以为是程序bug，或着运营失误，没在意。但等啊等，不仅跳广告的频率没降，而且各路牛鬼蛇神都来了。不堪其扰的我看了一眼会员权益，发现它变了
 
 
-![](/img/vacuum_cleaner/vip_right.jpeg)
+![](/img/vacuum_cleaner/vip_right.jpeg#center)
 
 
 措辞非常委婉。广告该怎么弹还弹，但概率从100%降到了99% 。堪称史诗级鸡肋削弱。云音乐的广告是全屏的，以牺牲操作连贯性，破坏体验为代价换取商业利益。这类广告最近连只顾赚钱不怕骂的电商app 都不咋用了，反而被一个音乐app拾遗，令人意外
