@@ -5,31 +5,11 @@ tags:
   - it
 ---
 
-## L2TP
-
-L2TP协议是通用VPN协议，包括ios/android/windows/macos等系统原生支持。优点是易搭建易配置，缺点是容易被屏蔽
-
-一键部署脚本和文档: https://github.com/hwdsl2/setup-ipsec-vpn  。核心代码就一段
-
-```bash
-# All values MUST be placed inside 'single quotes'
-# DO NOT use these special characters within values: \ " '
-wget https://get.vpnsetup.net -O vpn.sh
-sudo VPN_IPSEC_PSK='your_ipsec_pre_shared_key' \
-VPN_USER='your_vpn_username' \
-VPN_PASSWORD='your_vpn_password' \
-sh vpn.sh
-```
-
-os选ubuntu。不选centos是因其没带 `wget` ，懒得装。防火墙放行 UDP 500 和 4500 端口。ios的VPN配置类型选 L2TP
-
-建议防火墙屏蔽包括 22(ssh) 在内所有其他端口，避免不必要的安全问题
-
 ## V2Ray
 
-关于V2Ray，读 [V2Ray简介和搭建教程](https://itlanyan.com/v2ray-tutorial/)
+关于V2Ray介绍，请参考 [V2Ray简介和搭建教程](https://itlanyan.com/v2ray-tutorial/)
 
-文章写得很好，我仅补充一点: 文中的安装脚本 (goV2.sh) 在2022年11月7日报错。我仅针对报错修改了一下脚本，可自取
+文章写得很好，我仅做点补充: 文中的安装脚本 (goV2.sh) 在2022年11月7日报错。我仅针对报错修改了一下脚本，可自取
 
 ```bash
 wget https://raw.githubusercontent.com/kyzy540/blogdraft/main/static/scripts/goV2.sh
@@ -46,10 +26,10 @@ sudo ./goV2.sh --version v5.1.0
 ```bash
 # ubuntu 20.02
 port=$(grep port /etc/v2ray/config.json | awk '{print $2}' | cut -d, -f1)
-ufw allow ${port}/tcp
+sudo ufw allow ${port}/tcp
 #启用 v2ray服务
-systemctl enable v2ray
-systemctl start v2ray
+sudo systemctl enable v2ray
+sudo systemctl start v2ray
 ```
 
 注意云实例的防火墙也要放行配置中的端口(TCP协议)
@@ -99,3 +79,21 @@ Trojan 和 Xray 类似，带伪装和加密，也需要TLS证书。但 [trojan-g
 [Install Trojan-GFW Server on Ubuntu Linux](https://sedap.github.io/install-trojan-gfw-on-ubuntu.html)
 
 [How To Easily Install Trojan GFW on Ubuntu - A Step by Step Tutorial](https://privacymelon.com/trojan-gfw-cdn-tutorial/)
+
+## L2TP (不推荐)
+
+L2TP协议是通用VPN协议，包括ios/android/windows/macos等系统原生支持。优点是易搭建易配置，缺点是容易被屏蔽……多容易呢？活不过3天
+
+一键部署脚本和文档: https://github.com/hwdsl2/setup-ipsec-vpn  。核心代码就一段
+
+```bash
+# All values MUST be placed inside 'single quotes'
+# DO NOT use these special characters within values: \ " '
+wget https://get.vpnsetup.net -O vpn.sh
+sudo VPN_IPSEC_PSK='your_ipsec_pre_shared_key' \
+VPN_USER='your_vpn_username' \
+VPN_PASSWORD='your_vpn_password' \
+sh vpn.sh
+```
+
+os选ubuntu。不选centos是因其没带 `wget` ，懒得装。防火墙放行 UDP 500 和 4500 端口。ios的VPN配置类型选 L2TP
