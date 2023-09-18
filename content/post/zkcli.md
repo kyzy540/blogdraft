@@ -17,7 +17,7 @@ keywords:
 鉴于仓库已超过1年不更新 (最后一次commit在2022-08-16)，我只好自己fork代码，增加了`deleteall`的递归逻辑。安装命令
 
 ```bash
-go install github.com/kyzy540/zkcli
+go install github.com/kyzy540/zkcli@latest
 ```
 
 相较于zookeeper自带的cli工具 `zkCli.sh`，这个go版本有3点优势
