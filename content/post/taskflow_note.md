@@ -20,7 +20,7 @@ Taskflow是一个Python库，用于构建工作流。它可以处理异步操作
 
 ## 分布式工作流样例
 
-[Conductor running 99 bottles of beer song requests](https://docs.openstack.org/taskflow/latest/user/examples.html#conductor-running-99-bottles-of-beer-song-requests) 是一个典型例子，只要把代码中的sqlite数据库改成mysql就能实现分布式。但为了方便对照代码，本文还是以sqlite为例做介绍。这个流程分6步：
+[Conductor running 99 bottles of beer song requests](https://docs.openstack.org/taskflow/latest/user/examples.html#conductor-running-99-bottles-of-beer-song-requests) 是一个典型例子，只要把代码中的sqlite数据库改成mysql就能实现分布式。但为了方便对照代码，本文还是以sqlite为例做介绍。整个流程分6步：
 1. [构建工作流meta data数据库](https://opendev.org/openstack/taskflow/src/branch/master//taskflow/examples/99_bottles.py#L185)
 2. [发布job: 将工作流meta data宣告到zookeeper](https://opendev.org/openstack/taskflow/src/branch/master//taskflow/examples/99_bottles.py#L189)
 3. [conductor从zookeeper承接job](https://opendev.org/openstack/taskflow/src/branch/master//taskflow/examples/99_bottles.py#L149)
@@ -30,13 +30,13 @@ Taskflow是一个Python库，用于构建工作流。它可以处理异步操作
 
 ![](/img/taskflow_note/99_bottles.png#center)
 
-整个过程中 **`Conductor`和`job`** 是运行工作流的核心，实例化和执行工作流都由他完成。剩下部分都是辅助它完成工作。例如，`poster`的作用是宣告job，供`conductor`认领。`Persistence`是用来存储job的meta data，`Conductor` 要维护meta data
+**`Conductor`** 是工作流的核心，实例化和执行工作流都由他完成。剩下部分都是辅助它完成工作。例如，`poster`的作用是宣告job，供`Conductor`认领。`Persistence`是用来存储job的meta data，`Conductor` 要维护meta data
 
 至此，读者认识了由若干陌生名词堆砌而成的一张流程图，同时收获了一头雾水。不要紧，接下来将逐步分解
 
 ## 自顶向下
 
-上文已经提到，工作流的核心是`Conductor`和`job`。一个job的生命周期包括: *发布(post) -> 承接(require) -> 执行(execute) -> 完成(done)* 。`Jobboard`就是发布和承接的中心
+ 一个job的生命周期包括: *发布(post) -> 承接(require) -> 执行(execute) -> 完成(done)* 。`Jobboard`就是发布和承接的中心
 
 ### Jobboard
 打个比方，`Jobboard`是《巫师》世界里的公告板，`job`是委托，`Conductor`是承接委托的猎魔人 (可能有多位)，`poster`是发布委托的村民
@@ -107,7 +107,7 @@ with contextlib.closing(persist_backend):
 在进一步下沉之前，必须先了解2个问题: 上文提到多次的"工作流"定义是什么？为什么要由Engine执行工作流？
 
 ### 工作流定义
-* Task (任务): 代表了最基础的工作单元，也就是一个可以执行的活动或行动，理想情况下幂等。在 Taskflow 中，一个 Task 通常是由一个 Python 函数或类实例化而成的对象，它包含了执行特定工作的逻辑。每个 Task 可以具有输入和输出，这些输入和输出可以用来与其他 Task 之间传递数据
+* Task (任务): 代表了最基础的工作单元，理想情况下幂等。失败可以回滚，也允许重试。在 Taskflow 中，一个 Task 通常是由一个 Python 函数或类实例化而成的对象，它包含了执行特定工作的逻辑。每个 Task 可以具有输入和输出，这些输入和输出可以用来与其他 Task 之间传递数据
 * Flow (工作流): Flow 是由一系列 Task 组成的集合，它定义了 Task 之间的执行顺序或依赖关系。一个 Flow 可以是线性的，即任务按照特定的顺序执行；也可以是更复杂的结构，如图或树状结构。Flow 负责描述 Task 之间的关系，而不是执行它们
 
 因此，**构建工作流** 是指调用`factory function`构建 **有向无环图（DAG）**，并没有真正执行。`Flow`是job的核心抽象，只有当它构建成功后job才进入核心阶段
