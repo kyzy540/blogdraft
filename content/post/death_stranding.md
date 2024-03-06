@@ -27,7 +27,7 @@ keywords:
 2. 漂浮BT目标大，移动慢，攻击欲望趋近于无。薄皮大馅一枪一个
 3. 晶体量足。还附带武器和材料等赠品
 
-笔者刷2圈赞了3000开罗晶体，比打大BT休闲得多
+我刷2圈赞了3000开罗晶体，比打大BT休闲得多
 
 ![](/img/death_stranding/bts.jpeg)
 <font color=gray size=2>一群小可爱</font>
