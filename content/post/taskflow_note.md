@@ -127,7 +127,7 @@ Engine (引擎)模块执行 Flow 中的 Task。它负责遍历 Flow 中定义的
 ### Persistence
 
 ### Worker
-笔者猜测`Conductor`可能是后加的，是原本*worker*高层抽象。Taskflow里有 [Worker](https://docs.openstack.org/taskflow/latest/user/workers.html#workers)，但它仅用在更复杂分布式架构下，即`Conductor`承接job，实例化工作流`make_bottles`，然后工作流内的每个`Action`发送到远端`Worker`执行。下图是`Conductor`本地执行Action (conductor-1) 和 远程搭配 `Worker`(conductor-2) 的区别
+我猜测`Conductor`可能是后加的，是原本*worker*高层抽象。Taskflow里有 [Worker](https://docs.openstack.org/taskflow/latest/user/workers.html#workers)，但它仅用在更复杂分布式架构下，即`Conductor`承接job，实例化工作流`make_bottles`，然后工作流内的每个`Action`发送到远端`Worker`执行。下图是`Conductor`本地执行Action (conductor-1) 和 远程搭配 `Worker`(conductor-2) 的区别
 ![](/img/taskflow_note/worker_action_engine.png#center)
 
 但什么场景要用到`Conductor`搭配`Worker` 使用呢？我想不到
