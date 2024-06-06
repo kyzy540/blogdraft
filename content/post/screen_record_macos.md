@@ -33,6 +33,11 @@ ffmpeg -i input.mov -c:v libx264 -c:a aac -strict experimental output.mp4
 ffmpeg -i output.mp4 -vf subtitles=subtitle.srt -y output_with_sub.mp4
 ```
 
+一点小思考:
+* 视频时长应该尽量短，短视频平台限制14秒时长是有道理的
+* 一行字幕尽量短；驻留时间应该 >3秒。易读
+* 字幕驻留 >6秒读起来很轻松。如果字数允许可以考虑将多行字合并
+
 参考:
 
 [Mac OS中利用ffmpeg为视频添加字幕](https://developer.aliyun.com/article/996308)
