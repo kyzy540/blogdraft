@@ -20,7 +20,7 @@ v2ray服务端安装之前写过一篇: [《VPN Setup》](../vpnsetup)。安装�
 
 v2ray客户端有很多，V2rayU/V2rayX/V2box等。要么多年无人维护，要么安装繁琐。到底还是开源社区维护的[v2fly/v2ray-core](https://github.com/v2fly/v2ray-core)最靠谱
 
-简单说，v2ray是一个支持vmess加密通讯服务。启动两个服务，一个在外网 (server)，一个在本地mac上 (client)。client和server通过vmess通讯。client向mac提供socket代理服务
+简单说，v2ray是一个支持vmess加密通讯服务。启动两个服务，一个在外网 (server)，一个在mac上 (client)。client向mac提供socket代理服务，和server通过vmess通讯
 
 ![](/img/macos_v2ray_client/dataflow.png#center)
 
@@ -28,13 +28,13 @@ v2ray客户端有很多，V2rayU/V2rayX/V2box等。要么多年无人维护，�
 
 ### brew install v2ray
 
-`brew`是macOS的第三方包管理工具，可以用国内脚本安装 (github链接不稳定)。建议将镜像源设置成阿里云。
+`brew`是macOS的第三方包管理工具，可以用国内脚本安装 (github链接不稳定)。建议设阿里云镜像源。
 
 ```bash
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
 ```
 
-然后安装v2ray
+安装v2ray
 ```bash
 brew install v2ray
 ```
@@ -43,11 +43,11 @@ brew install v2ray
 
 从最简单开始。这是所有流量都走代理的配置，保存到`$HOME/config.json`
 
-`inbounds`表示入口 (监听)用`socks`协议，监听`127.0.0.1:1080`。不需要认证
+* **inbounds**: 用`socks`协议监听`127.0.0.1:1080`
 
-`outbounds`表示出口用`vmess`协议，`vnext`下是链接服务端的地址和认证
+* **outbounds**: 用`vmess`协议转发流量，`vnext`下是链接服务端的地址和认证
 
-意味着client会将发往`127.0.0.1:1080`的`tcp,udp`流量通过`vmess`转发到服务端
+意味着client会将发往`127.0.0.1:1080`的流量通过`vmess`转发到服务端
 
 ```json
 {
@@ -85,10 +85,10 @@ v2ray run
 
 ## macOS启用代理
 
-我的电脑用Wi-Fi，点开`详细信息...`，把client信息配入`SOCKS代理`
+以Wi-Fi为例，点开`详细信息...`，`SOCKS代理`配client信息
 ![](/img/macos_v2ray_client/macos_socks_proxy_config.png#center)
 
-如果嫌系统配置繁琐，可以用脚本
+嫌繁琐也可以用脚本
 ```bash
 #!/bin/sh
 
@@ -103,17 +103,17 @@ else
 fi
 ```
 
-如是，全局tcp/udp流量启用。所谓全局指浏览器、应用和类似iCloud的后台服务都会走代理。
+如是，全局代理启用。所谓全局指浏览器、应用和类似iCloud的后台服务都会走代理。
 
 全局代理不够经济实惠。试想，iCloud后台同步数据流量大，走代理即占带宽又降速——国内本来能直连的网站从国外绕了一圈，舍近取远。有些国内网站走代理甚至反而会被墙
 
 ## 配置路由和DNS规则
 
-目标是:
+优化路由规则可以实现国内/外分流:
 1. 只有常用的国外网站走代理
-2. 剩余下都直连，不走代理
+2. 剩余网站都直连，不走代理
 
-首先，`outbounds`应该配置两个出口: `direct`直连，`proxy`代理。`direct`在前，作默认路由。意味着数据流量默认直连，除非匹配`proxy`对应的规则
+首先，`outbounds`改配置两个出口: `direct`直连，`proxy`代理。`direct`在前，作默认路由。意味着数据流量默认直连，除非匹配`proxy`对应的规则
 
 之后配置重点: `routing`，路由规则。规则从上到下 (数组从前到后)，先匹配先奏效，类似`iptables`。`"domain": ["geosite:geolocation-!cn"]`包含了常用国外网站域名。去往这些域名的流量会走代理
 
@@ -202,14 +202,14 @@ fi
 }
 ```
 
-最后，注意观察v2ray的console日志，看看流量走向是否符合预期。例如下面日志显示google和github流量走代理，iCloud则没走
+最后，注意观察v2ray的console日志，看看流量走向是否符合预期。例如下面日志显示google和github流量走代理，iCloud则直连
 ```
 2024/07/27 11:19:55 tcp:127.0.0.1:58714 accepted tcp:www.google.com:443 [proxy]
 2024/07/27 11:20:21 tcp:127.0.0.1:58801 accepted tcp:raw.githubusercontent.com:443 [proxy]
 2024/07/27 11:20:21 tcp:127.0.0.1:58803 accepted tcp:edge-062.xasha1.icloud-content.com.cn:443 [direct]
 ```
 
-*注: `geosite:microsoft`包含github域名。为了加速不配在前置`direct`规则里*
+*注: `geosite:microsoft`包含github域名。为了加速，不配在前置`direct`规则里*
 
 参考来源:
 * [Routing路由](https://v2raydocs.web.illinois.edu/config/routing.html#routingobject)
