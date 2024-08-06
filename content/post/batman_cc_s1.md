@@ -2,7 +2,7 @@
 title: "《蝙蝠侠：披风战士 第一季》"
 date: 2024-08-05T09:25:10+08:00
 tags:
-  - 电影
+  - 动画
 ---
 
 [![](/img/movies/batman_cc_s1.webp#center)](https://movie.douban.com/subject/35467048/)
