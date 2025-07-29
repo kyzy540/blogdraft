@@ -9,7 +9,7 @@ keywords:
   - taskflow
 ---
 
-Taskflow是一个Python库，用于构建工作流。它可以处理异步操作、分布式部署和错误跟踪。相比 [Airflow](https://airflow.apache.org/) 它更轻量，不需要部署client&server架构。代码引入taskflow库，配合外部存储，就可以实现分布式工作流应用
+Taskflow是一个Python库，用于构建工作流。它可以处理异步操作、分布式部署和错误跟踪。相比 [Airflow](https://airflow.apache.org/) 更轻量，不需要部署client&server架构。代码引入taskflow库，配合外部存储，就可以实现分布式工作流应用
 
 [![TaskFlow官网](/img/taskflow_note/taskflow_icon.png#center)](https://wiki.openstack.org/wiki/TaskFlow)
 
@@ -39,7 +39,7 @@ Taskflow是一个Python库，用于构建工作流。它可以处理异步操作
  一个job的生命周期包括: *发布(post) -> 承接(require) -> 执行(execute) -> 完成(done)* 。`Jobboard`就是发布和承接的中心
 
 ### Jobboard
-打个比方，`Jobboard`是《巫师》世界里的公告板，`job`是委托，`Conductor`是承接委托的猎魔人 (可能有多位)，`poster`是发布委托的村民
+打个比方，`Jobboard`是《巫师》世界里的公告板，`job`是委托，`Conductor`是承接委托的猎魔人，`poster`是发布委托的村民
 ![](/img/taskflow_note/notice_board.jpg#center)
 
 `poster`发布到`Jobboard`的数据很少。读者可以先运行`run_poster`，然后暂停，看看zookeeper里的job数据。只包含了poster id、和 uuid。从代码也可以看出确实没别的信息了
