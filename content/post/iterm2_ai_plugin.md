@@ -1,7 +1,6 @@
 ---
 title: "iTerm2 + Ollama启用AI功能"
 date: 2025-10-28T17:36:04+08:00
-draft: true
 tags:
   - it
   - macos
