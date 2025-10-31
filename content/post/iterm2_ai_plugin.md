@@ -24,13 +24,13 @@ iTerm2 3.5后提供了AI功能，有2种用法:
 
 说完有的没的，聊具体安装。我基于上面博文做了些调整
 
-用brew安装iTerm2 AI Plugin和ollama-app更方便
+用brew安装iTerm2 AI Plugin和ollama更方便
 ```bash
 brew install --cask itermai
-brew install --cask ollama-app
+brew install ollama
+# 开机自启动
+brew services start ollama
 ```
-
-安装ollama-app图方便。不必每次敲`ollama serve`，还占一个session
 
 *Configure AI Models Manually* 重点配置和文章一样，区别是模型选**deepseek-coder:1.7b**
 >API: Llama
