@@ -10,7 +10,7 @@ tags:
 
 创建一个 *快捷指令* 供Siri使用。快捷指令会循环听用户问题，通过API发给大模型，后朗读回答。可以多轮问答，包含上下文
 
-API使用阿里云百炼，可以改成其他兼容OpenAI标准的
+API使用阿里云，可以改成其他兼容OpenAI标准的
 
 必须提供API Key。**不免费**
 
@@ -18,18 +18,21 @@ API使用阿里云百炼，可以改成其他兼容OpenAI标准的
 
 下载快捷指令: [唠嗑](https://www.icloud.com/shortcuts/fc956f86a62044e08a9c89bec49e6be8)
 
-将`Bearer sk-xxx`替换成有效的API Key。具体获取方法参考接口提供方文档，例如[阿里云获取API Key](https://bailian.console.aliyun.com/?tab=api#/api/?type=model&url=2712195)。就可以使用了
+将`Bearer sk-xxx`替换成有效的 API Key 就可以使用了。获取key方法参考官方文档
+* [DeepSeek](https://api-docs.deepseek.com/zh-cn/)
+* [Moonshot AI (Kimi)](https://platform.moonshot.cn/docs/introduction#%E8%8E%B7%E5%8F%96-api-%E5%AF%86%E9%92%A5)
+* [阿里云](https://bailian.console.aliyun.com/?tab=api#/api/?type=model&url=2712195)
 
 以下参数可以按需调整
-* `model_name`: 默认`qwen-flash`，可以改成其他模型，如`qwen-plus`
-* URL: 兼容OpenAI标准的endpoint
+* `model_name`: 模型名，默认`qwen-flash`。用 DeepSeek API 改成 `deepseek-chat`
+* `URL`: 兼容OpenAI API标准的base_url。DeepSeek是`https://api.deepseek.com`
 * 重复`3`次: 控制问答轮次，默认最多3轮。控制轮次是为了节约Token。由于问答包含上下文，轮次越多携带上下文越多，Token消耗越多
 * `enable_search: True`: 允许模型推理过程中联网，默认开启。模型更好回答时效性问题。代价是会多消耗些许Token
-* prompt `Answer briefly, under 40 words`: 提示词。建议限制字数，否则回答可能很冗长。提示词也算Token，其本身不建议写长
+* prompt `Answer briefly, under 40 words`: 提示词。限制回答字数。提示词也算Token，其本身不建议写长
 
 ## 费用
 
-价格请以服务商官网实时报价为准。本文价格基于2025-11-12阿里云官网。`qwen-flash`报价为
+价格请以服务商官网实时报价为准。这里介绍算法。以2025-11-12阿里云`qwen-flash`报价为例
 
 | 单次请求的输入Token数 | 输入单价（每千Token） | 输出单价（每千Token） |
 |------------|------------------------|------------------------|
@@ -39,15 +42,15 @@ API使用阿里云百炼，可以改成其他兼容OpenAI标准的
 
 1个Token通常对应一个汉字，或一个英语单词。看起来不贵，但实际计费不仅按问题的字数算，还有提示词、搜索网络等其他计费项
 
-如果觉得不好算，实践更直观。为了确保不少算，我把提示词限制升到80个单词: `Answer briefly, under 80 words`
+如果觉得不好算，实践更直观。为了确保不少算，我把提示词限制升到80: `Answer briefly, under 80 words`
 
-3轮问答消耗消耗11K Tokens (输出10.5K, 输入0.5K)。请求Token数匹配最低档位，因此花费 0.0015 * 10.5 + 0.00015 * 0.5 = 0.015825元
+3轮问答消耗消耗11K Tokens。输出10.5K, 输入0.5K。请求Token数匹配最低档位，花费 0.0015 * 10.5 + 0.00015 * 0.5 = 0.015825元
 
-如果还不够直观，再加个时间视角: 10元可以跑630次快捷指令，每次问满3轮。均摊到一年折合每天可跑1.7次
+换个说法，10元可以跑630次快捷指令，每次问满3轮。均摊到一年每天可用1.7次
 
 再次说明，问答包含上下文，因此每轮Token数会累积变大，例如第3轮输入包含了前2轮的问题和回答。如果把回答限制到40个单词，只问2轮，消耗的Token可以降到5K或更低
 
-总结: 偶尔用的话，10元管一年
+偶尔用的话，10元管一年
 
 ## 实现
 
