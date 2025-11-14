@@ -45,4 +45,33 @@ brew services start ollama
 
 至于生成命令的质量，说实话每个模型都不如意。复杂的任务还得找云端大模型
 
-最后，我的电脑是macbook air m3。频繁推理后机器会明显升温。没主动散热的笔记本还是不太适合跑大模型
+我的电脑是macbook air m3。频繁推理后机器会明显升温。没主动散热的笔记本还是不太适合跑大模型
+
+## 接云端大模型
+
+接云端模型也不复杂。首先获取API Key，参考 [《Siri接大模型唠嗑》](../ios_shortcut_chatai/)。注意 **不免费**
+
+参考截图，修改配置
+
+![](/img/itermai/api_key.png#center)
+
+![](/img/itermai/configure_ai_model.png#center)
+
+>API Key: sk-xxx
+>
+>Model: qwen-flash
+>
+>URL: https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
+>
+>API: Chat Completions
+
+* API Key: 从模型服务商获取的API Key
+* Model: 模型名。以服务商提供为准
+* URL: 服务商提供的`base_url`
+* API: 接口标准。视`base_url`而定。以`chat/completions`结尾就选`Chat Completions`。如果实在不知道选哪个，可以挨个试
+
+如果经济条件允许，建议开启`AI Completion`。如此在Composer敲命令时会有实时建议。不一定多管用，但看起来很酷
+
+![](/img/itermai/ai_completion.png#center)
+
+![](/img/itermai/composer_ai_completion.png#center)
