@@ -52,3 +52,14 @@ print([e.name for e in em.extensions]) # 应包含 "gpu"
 ```
 
 注册entry point不影响修改源代码，即修改`GpuConductor`代码不需要重新安装
+
+## job post
+
+发布Job时，需要指定`details`
+
+```python
+job_backend = job_backends.fetch(name, conf, persistence=persist_backend)
+
+details = {"gpu": True}
+job_backend.post(flow_name, logbook, details)
+```
