@@ -67,3 +67,20 @@ job_backend = job_backends.fetch(name, conf, persistence=persist_backend)
 details = {"gpu": True}
 job_backend.post(flow_name, logbook, details)
 ```
+
+# 补充
+
+额外补充，Conductor提供的notifier callback接口不能用于过滤job。用法类似`conductor.notifier.register(cond.notifier.ANY, callback)`。关键在于callback不能中断运行job的流程。notifier既不返回值，也不出异常。核心代码如下
+
+```python
+def notify(self, event_type, details):
+    # 省略上文
+    try:
+        listener(event_type, details.copy())
+    except Exception:
+        LOG.warning("Failure calling listener %s to notify about event"
+                    " %s, details: %s", listener, event_type,
+                    details, exc_info=True)
+```
+
+另一个补充点是Conductor不是非要通过`stevedore`实例化，直接实例化也行。用`stevedore`是最佳实线，如此可以通过配置方便地修改Conductor类型。更灵活
