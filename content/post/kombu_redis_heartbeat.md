@@ -95,7 +95,7 @@ if __name__ == "__main__":
 ```
 
 ## fanout交换机
-`Exchange(type="fanout")`是广播交换机，对应AMOP中topic广播概念，对应[《Redis Pub/sub》](https://redis.io/docs/latest/develop/pubsub/)。广播消息指生产者向topic发一次消息，此时订阅topic的所有消费者都会收到消息。但对于发消息时没订阅topic的消费者，没法收到历史消息。Redis的channel机制和topic一样
+`Exchange(type="fanout")`是广播交换机，对应AMQP中topic广播概念，对应[《Redis Pub/sub》](https://redis.io/docs/latest/develop/pubsub/)。广播消息指生产者向topic发一次消息，此时订阅topic的所有消费者都会收到消息。但对于发消息时没订阅topic的消费者，没法收到历史消息。Redis的channel机制和topic一样
 
 Exchange交换机是Kombu特有的概念，核心是为了解耦生产者与消费者，并提供灵活的路由策略。Exchange可以绑定多个消息队列，配置复杂路由规则。如此，生成者可以只关心“消息怎么发”，把“消息发给谁”的问题留给Exchange
 
@@ -137,3 +137,54 @@ producer.publish(payload, exchange=heartbeat_exchange, serializer="json")
 ```
 
 对了，Redis的channel广播不区分数据库，因此链接字符串不用写数据库序号
+
+## 仅用redis
+如果确定用redis，还有更简单的方案。Redis的`SET key value EX seconds`支持TTL(生存时间)，非常适合心跳机制。于是worker和proxy代码可以如下实现
+
+worker.py
+```python
+import time
+import redis
+
+class Worker:
+    def __init__(self, worker_id):
+        self.r = redis.Redis(host="localhost", port=6379, decode_responses=True)
+        self.worker_id = worker_id
+        self.key = f"registry:{worker_id}"
+
+
+    def start(self):
+        print(f"[{self.worker_id}] Starting up...")
+        while True:
+            self.r.setex(self.key, 15, "online")
+            print(f"[{self.worker_id}] Heartbeat sent.")
+            time.sleep(5)
+
+if __name__ == "__main__":
+    worker = Worker("node_1")
+    worker.start()
+
+```
+
+proxy.py
+```python
+import time
+import redis
+
+class Proxy:
+    def __init__(self):
+        self.r = redis.Redis(host="localhost", port=6379, decode_responses=True)
+
+    def start(self):
+        while True:
+            active_workers = [k.split(":")[-1] for k in self.r.keys("registry:*")]
+            print(f"Active workers: {active_workers}")
+            time.sleep(5)
+
+if __name__ == "__main__":
+    proxy = Proxy()
+    proxy.start()
+
+```
+
+言简意赅。我喜欢
