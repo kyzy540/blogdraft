@@ -23,7 +23,7 @@ menu:
       weight: 3
 
 params:
-  author: "kyzy540"
+  author: kyzy540
   env: production
   ShowCodeCopyButtons: true
   homeInfoParams:
